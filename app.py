@@ -9,10 +9,14 @@ st.title("Actualización Estados de Bonos")
 st.write("De 'No Conciliado' a 'Ingresado Ok'")
 
 # --- 1. CONEXIÓN PERMANENTE (reemplaza a auth.authenticate_user de Colab) ---
-credentials = service_account.Credentials.from_service_account_info(
-    #st.secrets["gcp_service_account"]
-)
-client = bigquery.Client(project="prod-bi-selfservice-cmd", credentials=credentials)
+#credentials = service_account.Credentials.from_service_account_info(
+#    st.secrets["gcp_service_account"]
+#)
+#client = bigquery.Client(project="prod-bi-selfservice-cmd", credentials=credentials)
+
+client = None
+st.warning("⚠️ Estoy en modo prueba, falta pegar el JSON en Secrets > Misterios")
+
 
 # --- 2. FUNCIÓN QUE YA TENÍAS EN COLAB (sin cambios) ---
 def procesar_bonos(bonos_texto):
