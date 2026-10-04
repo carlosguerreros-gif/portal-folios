@@ -10,7 +10,7 @@ st.write("De 'No Conciliado' a 'Ingresado Ok'")
 
 # --- 1. CONEXIÓN PERMANENTE (reemplaza a auth.authenticate_user de Colab) ---
 credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
+    #st.secrets["gcp_service_account"]
 )
 client = bigquery.Client(project="prod-bi-selfservice-cmd", credentials=credentials)
 
