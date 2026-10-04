@@ -38,7 +38,7 @@ if MODO_PRUEBA:
 
 # --- INPUT ---
 folios_text = st.text_area(
-    "Ingrese los folios de los bonos que cambiarán de estado",
+    "Ingrese los bonos que cambiarán de estado",
     placeholder="Ej: 12345678\n87654321\n234...",
     height=220,
     key="caja_folios"
