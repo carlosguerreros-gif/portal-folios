@@ -3,8 +3,28 @@ import re
 
 st.set_page_config(page_title="Folios RedSalud", layout="centered")
 
+# --- ESTILO PARA QUITAR ESPACIO SUPERIOR Y CENTRAR TÍTULO ---
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 1rem !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- ESTADOS ---
 if "caja_folios" not in st.session_state:
     st.session_state["caja_folios"] = ""
+if "resultado" not in st.session_state:
+    st.session_state["resultado"] = None
+
+def limpiar_caja():
+    st.session_state["caja_folios"] = ""
+    st.session_state["resultado"] = None
+
+# --- TÍTULO CENTRADO Y CHICO ---
+st.markdown("<h3 style='text-align: center; margin-bottom: 2px; font-size: 26px;'>Actualización Estados de Bonos</h3>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray; font-size: 14px; margin-top:0;'>De 'No Conciliado' a 'Ingresado Ok'</p>", unsafe_allow_html=True)
 
 def limpiar_caja():
     st.session_state["caja_folios"] = ""
