@@ -34,7 +34,7 @@ if "gcp_service_account" in st.secrets:
         MODO_PRUEBA = True
 
 if MODO_PRUEBA:
-    st.warning("⚠️ Estoy en modo prueba, falta pegar el JSON en Secrets > Misterios", icon="⚠️")
+    st.warning("Estoy en modo prueba, falta pegar el JSON en Secrets > Misterios", icon="⚠️")
 
 # --- INPUT ---
 folios_text = st.text_area(
