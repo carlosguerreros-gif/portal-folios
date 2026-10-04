@@ -28,9 +28,10 @@ if MODO_PRUEBA:
 
 # --- INPUT ---
 folios_text = st.text_area(
-    "Ingrese los folios de los bonos que cambiarán de estado",
+    "Ingrese los bonos que cambiarán de estado",
     placeholder="Ej: 12345678\n87654321\n234...",
-    height=200
+    height=200,
+    key="caja_folios"  # <- AGREGA ESTO
 )
 
 c1, c2 = st.columns([2,1])
@@ -40,6 +41,7 @@ with c2:
     btn_limpiar = st.button("Limpiar", use_container_width=True)
 
 if btn_limpiar:
+    st.session_state["caja_folios"] = ""
     st.rerun()
 
 # --- LÓGICA AL ACTUALIZAR ---
