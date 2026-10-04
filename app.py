@@ -9,7 +9,7 @@ if "caja_folios" not in st.session_state:
 def limpiar_caja():
     st.session_state["caja_folios"] = ""
 
-st.title("Actualización Estados de Bonos")
+st.markdown("<h3 style='margin-bottom:0px;'>Actualización Estados de Bonos</h3>", unsafe_allow_html=True)
 st.caption("De 'No Conciliado' a 'Ingresado Ok'")
 
 MODO_PRUEBA = True
