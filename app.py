@@ -74,13 +74,13 @@ if btn_actualizar:
         # --- MODO REAL ---
         try:
             # ⚠️ CAMBIA AQUÍ POR TU TABLA REAL
-            tabla = "prod-bi-selfservice-cmd.tu_dataset.tu_tabla_bonos"
+            tabla = "prod-bi-selfservice-cmd.EQUIPO_FINANZAS_CMD.imed_his_diario_centros"
 
             query = f"""
             UPDATE `{tabla}`
-            SET estado = 'Ingresado Ok'
-            WHERE folio IN UNNEST(@folios)
-            AND estado = 'No Conciliado'
+            SET estado_cruce = 'Ingresado Ok'
+            WHERE nro_bono_suc IN UNNEST(@folios)
+            AND estado_cruce = 'No Conciliado'
             """
 
             job_config = bigquery.QueryJobConfig(
