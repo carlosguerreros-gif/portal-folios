@@ -67,8 +67,8 @@ if btn_actualizar:
 
     if not MODO_PRUEBA:
         try:
-            tabla = "prod-bi-selfservice-cmd.tu_dataset.tu_tabla_bonos"
-            query = f"UPDATE `{tabla}` SET estado = 'Ingresado Ok' WHERE folio IN UNNEST(@folios) AND estado = 'No Conciliado'"
+            tabla = "prod-bi-selfservice-cmd.EQUIPO_FINANZAS_CMD.imed_his_diario_centros"
+            query = f"UPDATE `{tabla}` SET estado_cruce = 'Ingresado Ok' WHERE nro_bono_suc IN UNNEST(@folios) AND estado_cruce = 'No Conciliado'"
             job_config = bigquery.QueryJobConfig(query_parameters=[bigquery.ArrayQueryParameter("folios", "STRING", folios_unicos)])
             job = client.query(query, job_config=job_config)
             job.result()
